@@ -1,0 +1,117 @@
+[user]
+    name = Your Name
+    email = your.email@example.com
+
+[core]
+    editor = cursor
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    cm = commit -m
+    amend = commit --amend
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+    graph = log --graph --oneline --all
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ll = log --oneline --graph --decorate
+    lla = log --oneline --graph --decorate --all
+    diff = diff --word-diff
+    diffstat = diff --stat
+    addp = add -p
+    stash = stash push
+    stashes = stash list
+    unstash = stash pop
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    upstream = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
+    upstream-branch = "!git rev-parse --abbrev-ref --symbolic-full-name @{u} | sed 's/.*\\///'"
+    upstream-remote = "!git rev-parse --abbrev-ref --symbolic-full-name @{u} | sed 's/\\/.*//'"
+    upstream-url = "!git config --get remote.$(git upstream-remote).url"
+    upstream-fetch = "!git fetch $(git upstream-remote)"
+    upstream-push = "!git push $(git upstream-remote) $(git branch-name)"
+    upstream-pull = "!git pull $(git upstream-remote) $(git upstream-branch)"
+    upstream-rebase = "!git rebase $(git upstream-remote)/$(git upstream-branch)"
+    upstream-merge = "!git merge $(git upstream-remote)/$(git upstream-branch)"
+    upstream-reset = "!git reset --hard $(git upstream-remote)/$(git upstream-branch)"
+    upstream-clean = "!git clean -fd"
+    upstream-cleanup = "!git upstream-clean && git upstream-reset"
+    upstream-sync = "!git upstream-fetch && git upstream-rebase"
+    upstream-sync-merge = "!git upstream-fetch && git upstream-merge"
+    upstream-sync-reset = "!git upstream-fetch && git upstream-reset"
+    upstream-sync-cleanup = "!git upstream-fetch && git upstream-cleanup"
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
+
+[diff]
+    tool = vimdiff
+    algorithm = patience
+
+[difftool]
+    prompt = false
+
+[rebase]
+    autoStash = true
+
+[fetch]
+    prune = true
+
+[push]
+    default = simple
+    followTags = true
+
+[blame]
+    colorByAge = true
+
+[log]
+    date = iso
+    decorate = short
+
+[status]
+    showStash = true
+    submoduleSummary = true
+
+[submodule]
+    recurse = true
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[credential]
+    helper = cache
+
+[credential "https://github.com"]
+    helper = !gh auth git-credential
+
+[credential "https://gitlab.com"]
+    helper = !glab auth git-credential 

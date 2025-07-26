@@ -1,0 +1,77 @@
+# Development aliases
+alias dev="cd ~/Development"
+alias proj="cd ~/Projects"
+alias src="cd ~/src"
+
+# Git shortcuts
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gb="git branch"
+alias gd="git diff"
+alias glog="git log --oneline --graph"
+alias gst="git stash"
+alias gstp="git stash pop"
+
+# Docker shortcuts
+alias dc="docker-compose"
+alias dps="docker ps"
+alias dex="docker exec -it"
+alias dlogs="docker logs"
+alias dstop="docker stop"
+alias drm="docker rm"
+
+# Kubernetes shortcuts
+alias k="kubectl"
+alias kctx="kubectx"
+alias kns="kubens"
+
+# Development servers
+alias serve="python3 -m http.server"
+alias dev-server="npm run dev"
+alias api-server="python3 -m uvicorn main:app --reload"
+
+# Database
+alias psql-dev="psql -U dev -d dev"
+alias redis-cli="redis-cli"
+
+# Modern CLI tools
+alias ll="exa -l"
+alias la="exa -la"
+alias lt="exa -T"
+alias cat="bat"
+alias grep="rg"
+alias find="fd"
+alias ps="procs"
+alias top="btop"
+alias du="dust"
+alias df="duf"
+alias ping="gping"
+alias ls="exa"
+alias tree="exa -T"
+alias neofetch="fastfetch"
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# System
+alias update="sudo apt update && sudo apt upgrade"
+alias cleanup="sudo apt autoremove && sudo apt autoclean"
+alias ports="netstat -tulanp"
+alias myip="curl ifconfig.me"
+
+# Fun
+alias matrix="cmatrix"
+alias train="sl"
+alias fortune="fortune | cowsay"
+alias weather="curl wttr.in"
+
+# Help command
+alias help="echo 'Available commands:' && echo '  dev, proj, src - Navigate to development directories' && echo '  gs, ga, gc, gp - Git shortcuts' && echo '  dc, dps, dex - Docker shortcuts' && echo '  ll, la, lt - Modern ls alternatives' && echo '  cat, grep, find - Modern CLI tools' && echo '  matrix, train, fortune - Fun commands'" 
