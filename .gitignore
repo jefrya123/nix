@@ -1,0 +1,47 @@
+# NixOS
+result
+result-*
+.direnv
+.envrc
+
+# Hardware configuration (contains sensitive info)
+hardware-configuration.nix
+
+# SSH keys and sensitive data
+*.key
+*.pem
+id_*
+*.pub
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.backup
+
+# Nix store
+/nix/store/
+
+# Home manager
+~/.config/nixpkgs/ 
